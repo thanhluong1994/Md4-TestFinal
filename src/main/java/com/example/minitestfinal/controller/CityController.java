@@ -32,6 +32,11 @@ public class CityController {
         return new ResponseEntity<>(cityService.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/nationality")
+    public ResponseEntity<Iterable<Nationality>> showAllNationality(){
+        return new ResponseEntity<>(nationalityService.findAll(),HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<City> CreateCity(@RequestBody City city){
         return new ResponseEntity<>(cityService.save(city),HttpStatus.CREATED);
